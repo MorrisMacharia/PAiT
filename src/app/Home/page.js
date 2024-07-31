@@ -5,9 +5,8 @@ import { IoIosLink } from "react-icons/io";
 import "./home.css";
 import Dock from "../components/Dock/dock";
 
-const page = () => {
+const Home = () => {
   return (
-    <div className="container2">
       <div className="home1">
         <div className="screen">
           <div className="main">
@@ -91,8 +90,7 @@ const page = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
-export default page;
+export default Home;

@@ -7,7 +7,6 @@ import Dock from "../components/Dock/dock";
 
 const Homewallet = () => {
   return (
-    <div className="container3">
       <div className="home2">
         <div className="screen2">
           <div className="main2">
@@ -97,7 +96,6 @@ const Homewallet = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

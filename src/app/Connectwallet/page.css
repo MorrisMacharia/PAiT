@@ -1,0 +1,104 @@
+body {
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  display: flex;
+}
+.creation1 {
+  width: 393px;
+  height: 852px;
+  border-radius: 55px;
+  background: linear-gradient(
+      180deg,
+      rgba(58, 80, 107, 0.2) 0%,
+      rgba(58, 80, 107, 0) 100%
+    ),
+    var(--Background, #0b132b);
+}
+.cont {
+  display: flex;
+  width: 393px;
+  height: 852px;
+  padding-top: var(--sds-size-space-1600);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.panel{
+  width: 242.25px;
+  height: 712px;
+}
+.top {
+  display: flex;
+  padding-bottom: 30px;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+.description {
+  display: flex;
+  padding: var(--sds-size-space-0);
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  align-self: stretch;
+}
+
+.wall {
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: var(--Title-Large-Size, 22px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.web {
+  align-self: stretch;
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: var(--Title-Large-Size, 22px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.actions {
+  height: 200px;
+  display: flex;
+  padding: var(--sds-size-space-0);
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+.new {
+  gap: 20px;
+  height: 40px;
+  display: flex;
+  padding: var(--sds-size-space-200) var(--sds-size-space-400);
+  justify-content: center;
+  align-items: center;
+  gap: var(--sds-size-space-300);
+  align-self: stretch;
+  border: none;
+  border-radius: var(--Corner-Medium, 12px);
+  background: var(--Primary-action, #45a5a3);
+}
+.link {
+  height: 40px;
+  display: flex;
+  padding: var(--sds-size-space-200) var(--sds-size-space-400);
+  justify-content: center;
+  align-items: center;
+  gap: var(--sds-size-space-300);
+  align-self: stretch;
+  border: none;
+  border-radius: var(--Corner-Medium, 12px);
+  background: var(--Border, #3a506b);
+}
