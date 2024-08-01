@@ -110,7 +110,7 @@ const Homewallet = () => {
                   <Image src="/Logo5.png" alt="logo" width={56} height={56} />
                 </div>
                 <div className="currencytoncoin">
-                  <div className="ton">Solana</div>
+                  <div className="ton">Ton</div>
                   <div className="usdton">USD $ 7.59 / 1 $TON</div>
                 </div>
                 <div className="btn3">

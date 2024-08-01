@@ -272,7 +272,8 @@ line-height: normal;
     display: flex;
   padding: var(--sds-size-space-400);
   align-items: center;
-  gap: var(--sds-size-space-400);
+  gap: 8px;
+  /* gap: var(--sds-size-space-400); */
   align-self: stretch;
   border-radius: var(--Corner-Large, 16px);
   border: 1px solid var(--Border, #3A506B);
@@ -312,7 +313,8 @@ line-height: normal;
     display: flex;
     padding: var(--sds-size-space-400);
     align-items: center;
-    gap: var(--sds-size-space-400);
+    gap: 8px;
+    /* gap: var(--sds-size-space-400); */
     align-self: stretch;
     border-radius: var(--Corner-Large, 16px);
     border: 1px solid var(--Border, #3A506B);
