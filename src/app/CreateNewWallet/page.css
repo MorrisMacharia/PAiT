@@ -121,7 +121,7 @@ body {
     0px 2px 3px 0px rgba(0, 0, 0, 0.3);
 }
 .table {
-  width: 30px;
+  width: 230px;
   color: black;
   color: var(--Background-Secondary, #1c2541);
   font-family: Poppins;
@@ -129,6 +129,13 @@ body {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+}
+.table tbody {
+  width: 170px; 
+}
+.table td {
+  width: 120px;
+  height: 26px; 
 }
 .tap {
   display: flex;

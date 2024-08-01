@@ -20,16 +20,39 @@ const Homewallet = () => {
               <div className="bal">USDT $30,704</div>
               <div className="breakdown">
                 <div className="frame1216">
-                  <div className="dig1">54,000.0 PAIT</div>
-                  <div className="dig2">USDT $27,000</div>
+                  <div className="dig1">
+                    <div className="dig3">
+                    54,000.0
+                    </div>
+                     PAIT</div>
+                  <div className="dig2">USDT 
+                    <div className="dig4">
+                    $27,000
+                    </div>
+                    </div>
                 </div>
                 <div className="frame1216">
-                  <div className="dig1">24.64 SOL</div>
-                  <div className="dig2">USDT $3,449</div>
+                  <div className="dig1">
+                    <div className="dig3">
+                    24.64
+                    </div>
+                     SOL</div>
+                  <div className="dig2">USDT
+                    <div className="dig4">
+                    $3,449
+                      </div> </div>
                 </div>
                 <div className="frame1216">
-                  <div className="dig1">34.04 TON</div>
-                  <div className="dig2">USDT $225</div>
+                  <div className="dig1">
+                    <div className="dig3">
+                    34.04
+                    </div>
+                     TON</div>
+                  <div className="dig2">USDT
+                    <div className="dig4">
+                    $255
+                    </div>
+                     </div>
                 </div>
               </div>
             </div>
@@ -45,7 +68,12 @@ const Homewallet = () => {
                     </div>
                   </div>
                   <div className="frame1223">
-                    <div className="usd">USD $0.50 / 1 $PAIT</div>
+                    <div className="usd">
+                      <div className="usd1">
+                      USD $0.50 
+                      </div>
+                      
+                      / 1 $PAIT</div>
 
                     <div className="btn1">
                       <button className="smallbutton">
@@ -92,8 +120,8 @@ const Homewallet = () => {
                 </div>
               </div>
             </div>
-        <Dock />
           </div>
+        <Dock />
         </div>
       </div>
   );

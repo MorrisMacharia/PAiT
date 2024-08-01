@@ -8,8 +8,8 @@
 
 .iphone {
   display: flex;
-  width: 435px;
-  height: 890px;
+  width: 393px;
+  height: 852px;
   padding: var(--sds-size-space-0);
   flex-direction: column;
   justify-content: center;

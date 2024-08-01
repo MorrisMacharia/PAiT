@@ -6,8 +6,8 @@ body{
 }
 .home2{
     display: flex;
-  width: 430px;
-  height: 890px;
+  width: 393px;
+  height: 852px;
   padding: var(--sds-size-space-0);
   flex-direction: column;
   justify-content: center;
@@ -18,8 +18,8 @@ body{
   }
   .screen2{
     display: flex;
-    /* width: 393px; */
-    height: 890px;
+    width: 393px;
+    height: 852px;
     padding: var(--sds-size-space-0);
     flex-direction: column;
     align-items: center;
@@ -29,21 +29,18 @@ body{
     border-radius: 55px;
   }
   .main2{
-    display: flex;
-    padding-top: 80px;
-    flex-direction: column;
-  /* background-color: red; */
-    align-items: flex-start;
-    gap: 50px;
-    flex: 1 0 0;
-    align-self: stretch;
+    width: 359px;
+  height: 712px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  /* justify-content: space-around; */
   }
   .account{
+    padding-top: 80px;
     display: flex;
-padding: var(--sds-size-space-0) var(--sds-size-space-400);
 flex-direction: column;
-align-items: flex-start;
-gap: var(--sds-size-space-300);
+gap:20px ;
 align-self: stretch;
 color: #f2f2f2;
   }
@@ -51,7 +48,7 @@ color: #f2f2f2;
     display: flex;
 padding: var(--sds-size-space-0);
 gap: 10px;
-justify-content: space-around;
+justify-content: space-between;
 align-self: stretch;
 color: #f2f2f2;
 background-color: 1c2541;
@@ -88,7 +85,7 @@ line-height: normal;
 padding: var(--sds-size-space-100) var(--sds-size-space-0);
 flex-direction: column;
 align-items: flex-start;
-gap: var(--sds-size-space-0);
+gap: 10px;
 align-self: stretch;
   }
   .frame1216{
@@ -102,6 +99,8 @@ border-bottom: 1px solid var(--Border, #3A506B);
   .dig1{
     color: var(--Text, #F2F2FB);
 font-family: Inter;
+display: flex;
+gap: 6px;
 font-size: var(--Label-Large-Size, 14px);
 font-style: normal;
 font-weight: 500;
@@ -116,27 +115,32 @@ line-height: normal;
   .dig2{
     color: var(--Text-Muted, #8A94B0);
 font-family: Inter;
+display: flex;
+gap: 6px;
 font-size: var(--Label-Large-Size, 14px);
 font-style: normal;
 font-weight: 500;
 line-height: normal;
-color: var(--Text, #F2F2FB);
 font-family: Inter;
 font-size: var(--Label-Large-Size, 14px);
 font-style: normal;
 font-weight: 500;
 line-height: normal;
   }
+  .dig3{
+    color: white;
+  }
+  .dig4{
+    color: #f2f2f2;
+  }
   .cryptopurchase {
     display: flex;
     padding: var(--sds-size-space-0) var(--sds-size-space-400);
     flex-direction: column;
     align-items: flex-start;
-    gap: 50px;
-    /* gap: var(--sds-size-space-400); */
+    gap: 30px;
     align-self: stretch;
     color: #f2f2fb;
-    /* background-color: #8a94b0; */
     border: #3a506b;
   }
   .pait {
@@ -206,6 +210,8 @@ line-height: normal;
     font-family: Poppins;
     font-size: var(--Label-Large-Size, 14px);
     font-style: normal;
+    display: flex;
+    gap: 5px;
     font-weight: 600;
     line-height: var(--Label-Large-Line-Height, 20px); /* 142.857% */
     letter-spacing: var(--Label-Medium-Tracking, 0.5px);
@@ -216,6 +222,9 @@ line-height: normal;
     font-weight: 300;
     line-height: var(--Label-Large-Line-Height, 20px);
     letter-spacing: var(--Label-Medium-Tracking, 0.5px);
+  }
+  .usd1{
+    color: #45a5a3 ;
   }
   .btn1 {
     display: flex;

@@ -29,7 +29,12 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="frame1223">
-                    <div className="usd">USD $0.50 / 1 $PAIT</div>
+                    <div className="usd">
+                      <div className="usd1">
+                      USD $0.50
+                      </div>
+                      
+                       / 1 $PAIT</div>
 
                     <div className="btn1">
                       <button className="smallbutton">
@@ -86,8 +91,8 @@ const Home = () => {
                 </button>
               </div>
             </div>
-            <Dock />
           </div>
+            <Dock />
         </div>
       </div>
   );

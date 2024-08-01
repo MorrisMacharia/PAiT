@@ -9,10 +9,10 @@ const CreateNewWallet = () => {
         <div className="panel3">
           <div className="top3">
             <div className="logo12">
-              <img src="/logo.png" alt="logo" width={86} height={24} />
+              <Image src="/logo.png" alt="logo" width={86} height={24} />
             </div>
             <div className="cirle2">
-              <img src="/circle-x.png" alt="logo" width={24} height={24} />
+              <Image src="/circle-x.png" alt="logo" width={24} height={24} />
             </div>
           </div>
           <div className="description2">
@@ -64,7 +64,7 @@ const CreateNewWallet = () => {
                   </div>
 
                   <div className="secrets">
-                    Your wallet can not be recovered if you <br></br>loose the
+                    Your wallet cannot be recovered if you <br></br>lose the
                     phrases.
                   </div>
                 </div>
@@ -73,28 +73,30 @@ const CreateNewWallet = () => {
 
             <div className="copy">
               <div className="phrases">
-              <table className="table">
-        <tr>
-            <td>word</td>
-            <td>galactic</td>
-            <td>velvet</td>
-        </tr>
-        <tr>
-            <td>quantum</td>
-            <td>dreams</td>
-            <td>bliss</td>
-        </tr>
-        <tr>
-            <td>whimsical</td>
-            <td>rainbow</td>
-            <td>serenade</td>
-        </tr>
-        <tr>
-            <td>echoes</td>
-            <td>moonlit</td>
-            <td>shine</td>
-        </tr>
-    </table>
+                <table className="table">
+                  <tbody>
+                    <tr>
+                      <td>word</td>
+                      <td>galactic</td>
+                      <td>velvet</td>
+                    </tr>
+                    <tr>
+                      <td>quantum</td>
+                      <td>dreams</td>
+                      <td>bliss</td>
+                    </tr>
+                    <tr>
+                      <td>whimsical</td>
+                      <td>rainbow</td>
+                      <td>serenade</td>
+                    </tr>
+                    <tr>
+                      <td>echoes</td>
+                      <td>moonlit</td>
+                      <td>shine</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
               <div className="tap">
                 <div className="copyicon">
