@@ -1,16 +1,76 @@
-import React from "react";
+"use client";
+import Link from "next/link";
+import React, { useState, useEffect } from "react";
 import "../CreateNewWallet/page.css";
 import Image from "next/image";
 
+const wordList = [
+  "alpha",
+  "beta",
+  "gamma",
+  "delta",
+  "epsilon",
+  "zeta",
+  "eta",
+  "theta",
+  "iota",
+  "kappa",
+  "lambda",
+  "mu",
+  "nu",
+  "xi",
+  "omicron",
+  "pi",
+  "rho",
+  "sigma",
+  "tau",
+  "upsilon",
+  "phi",
+  "chi",
+  "psi",
+  "omega",
+];
+
+const generateSecretPhrase = () => {
+  const phrase = [];
+  for (let i = 0; i < 12; i++) {
+    const randomIndex = Math.floor(Math.random() * wordList.length);
+    phrase.push(wordList[randomIndex]);
+  }
+  return phrase;
+};
+
 const CreateNewWallet = () => {
+  const [secretPhrase, setSecretPhrase] = useState([]);
+
+  useEffect(() => {
+    setSecretPhrase(generateSecretPhrase());
+  }, []);
+
+  const handleCopy = () => {
+    const phraseString = secretPhrase.join(" ");
+    navigator.clipboard
+      .writeText(phraseString)
+      .then(() => {
+        alert("Secret phrases copied to clipboard!");
+      })
+      .catch((err) => {
+        console.error("Could not copy text: ", err);
+      });
+  };
+
   return (
     <div className="creation3">
       <div className="cont2">
         <div className="panel3">
           <div className="top3">
+
+            <Link href="/Home">
+            
             <div className="logo12">
               <Image src="/logo.png" alt="logo" width={86} height={24} />
             </div>
+            </Link>
             <div className="cirle2">
               <Image src="/circle-x.png" alt="logo" width={24} height={24} />
             </div>
@@ -28,10 +88,9 @@ const CreateNewWallet = () => {
                       height={24}
                     />
                   </div>
-
                   <div className="secrets">
-                    These are your wallet’s secret phrases. <br></br> They let
-                    you access the wallet.
+                    These are your wallet’s secret phrases. <br /> They let you
+                    access the wallet.
                   </div>
                 </div>
               </div>
@@ -45,9 +104,8 @@ const CreateNewWallet = () => {
                       height={24}
                     />
                   </div>
-
                   <div className="secrets">
-                    Store these in a secure place <br></br> to keep your wallet
+                    Store these in a secure place <br /> to keep your wallet
                     safe. Never share them.
                   </div>
                 </div>
@@ -62,10 +120,9 @@ const CreateNewWallet = () => {
                       height={24}
                     />
                   </div>
-
                   <div className="secrets">
-                    Your wallet cannot be recovered if you <br></br>lose the
-                    phrases.
+                    Your wallet cannot be recovered if you <br />
+                    lose the phrases.
                   </div>
                 </div>
               </div>
@@ -75,30 +132,19 @@ const CreateNewWallet = () => {
               <div className="phrases">
                 <table className="table">
                   <tbody>
-                    <tr>
-                      <td>word</td>
-                      <td>galactic</td>
-                      <td>velvet</td>
-                    </tr>
-                    <tr>
-                      <td>quantum</td>
-                      <td>dreams</td>
-                      <td>bliss</td>
-                    </tr>
-                    <tr>
-                      <td>whimsical</td>
-                      <td>rainbow</td>
-                      <td>serenade</td>
-                    </tr>
-                    <tr>
-                      <td>echoes</td>
-                      <td>moonlit</td>
-                      <td>shine</td>
-                    </tr>
+                    {Array.from({ length: 4 }, (_, rowIndex) => (
+                      <tr key={rowIndex}>
+                        {Array.from({ length: 3 }, (_, colIndex) => (
+                          <td key={colIndex}>
+                            {secretPhrase[rowIndex * 3 + colIndex]}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
-              <div className="tap">
+              <div className="tap" onClick={handleCopy}>
                 <div className="copyicon">
                   <Image
                     src="/clipboard-copy.png"
@@ -112,7 +158,9 @@ const CreateNewWallet = () => {
             </div>
           </div>
           <div className="actions2">
-            <button className="saved1">I have saved them, continue</button>
+          <Link className="action3" href="/Verify"> 
+              <button className="saved1">I have saved them, continue</button>
+            </Link>
           </div>
         </div>
       </div>

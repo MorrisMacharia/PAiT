@@ -1,16 +1,33 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import "../Newwallet/page.css";
+import Link from "next/link";
 
 const Newwallet = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+
+  const handleButtonClick = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      router.push("/CreateNewWallet");
+    }, 5000);
+  };
+
   return (
     <div className="creation2">
       <div className="cont1">
         <div className="panel2">
           <div className="top2">
-            <div className="logo11">
-              <Image src="/logo.png" alt="logo" width={86} height={24} />
-            </div>
+            <Link href="/Home">
+              <div className="logo11">
+                <Image src="/logo.png" alt="logo" width={86} height={24} />
+              </div>
+            </Link>
+
             <div className="cirle">
               <Image src="/circle-x.png" alt="logo" width={24} height={24} />
             </div>
@@ -71,22 +88,27 @@ const Newwallet = () => {
               </div>
             </div>
 
-            <div className="copy">
+            <button className="copy" onClick={handleButtonClick}>
               <div className="phrases">
-                <div className="load">
+                {isLoading ? (
+                  <div className="loader-circle"></div>
+                ) : (
                   <Image
                     src="/loader-circle.png"
                     alt="load"
                     width={24}
                     height={24}
                   />
-                </div>
-                <div className="creating">Creating Wallet</div>
+                )}
+                <div className="creating">Create Wallet</div>
               </div>
-            </div>
+            </button>
           </div>
+
           <div className="actions2">
-            <button className="saved">I have saved them, continue</button>
+            <Link href="/VerifyPhrases">
+              <button className="saved">I have saved them, continue</button>
+            </Link>
           </div>
         </div>
       </div>

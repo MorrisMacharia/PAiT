@@ -160,8 +160,14 @@ body {
   gap: var(--sds-size-space-400);
   flex: 1 0 0;
   align-self: stretch;
+  text-decoration: none;
+}
+.action3{
+  text-decoration: none;
+  align-self: stretch;
 }
 .saved1 {
+  width: 242px;
   color: white;
   display: flex;
   padding-bottom: 30px;

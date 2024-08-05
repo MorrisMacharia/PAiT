@@ -1,6 +1,7 @@
 import React from "react";
 import "../Verify/page.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const Verify = () => {
   return (
@@ -8,9 +9,14 @@ const Verify = () => {
       <div className="cont3">
         <div className="panel4">
           <div className="top4">
+
+<Link href="/Home">
             <div className="logo13">
               <Image src="/logo.png" alt="logo" width={86} height={24} />
             </div>
+
+</Link>
+
             <div className="cirle3">
               <Image src="/circle-x.png" alt="logo" width={24} height={24} />
             </div>
@@ -88,7 +94,12 @@ const Verify = () => {
             <div className="write">I forgot to write them down, go back</div>
           </div>
           <div className="actions2">
+<Link href="/VerifyPhrases">
+
+
             <button className="saved1">Finish</button>
+</Link>
+
           </div>
         </div>
         </div>

@@ -100,6 +100,8 @@ body {
   align-items: flex-start;
   gap: var(--sds-size-space-400);
   align-self: stretch;
+  border: none;
+  border-radius: 12px;
 }
 .phrases {
   display: flex;
@@ -149,4 +151,21 @@ body {
   border: none;
   background: #0b132b;
   /* padding-bottom: 60px; */
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-circle {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 2s linear infinite;
 }
