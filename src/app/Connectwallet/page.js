@@ -1,33 +1,31 @@
+"use client"
+
 import React from "react";
 import "../Connectwallet/page.css";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Connectwallet = () => {
-  // const { connectWallet } = useContext(WalletContext);
-  // const router = useRouter();
+  const router = useRouter();
 
-  // const handleClick = async () => {
-  //   await connectWallet();
-  //   router.push('/Homewallet');
-  // };
+  const handleBackClick = () => {
+    router.back();
+  };
 
   return (
     <div className="creation1">
       <div className="cont">
         <div className="panel">
           <div className="top">
-            <Link
-              href="/Home
-            "
-            >
+            <Link href="/Home">
               <div className="logo11">
                 <Image src="/logo.png" alt="logo" width={86} height={24} />
               </div>
             </Link>
-            <div className="cirle">
-              <Image src="/circle-x.png" alt="logo" width={24} height={24} />
-            </div>
+            <button className="circle" onClick={handleBackClick}>
+              <Image src="/circle-x.png" alt="back" width={24} height={24} />
+            </button>
           </div>
 
           <div className="description">
@@ -61,7 +59,7 @@ const Connectwallet = () => {
               <button className="link">
                 {" "}
                 <div>
-                  <Image src="/link.png" alt="plus" width={24} height={24} />
+                  <Image src="/link.png" alt="link" width={24} height={24} />
                 </div>{" "}
                 <div className="crt">Link Existing Wallet</div>
               </button>

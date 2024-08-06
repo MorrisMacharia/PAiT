@@ -26,6 +26,10 @@ body {
   gap: 10px;
   flex-shrink: 0;
 }
+.circle{
+  background-color: transparent;
+  border: none;
+}
 .panel{
   width: 242.25px;
   height: 712px;

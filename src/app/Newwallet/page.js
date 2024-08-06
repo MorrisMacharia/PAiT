@@ -17,6 +17,10 @@ const Newwallet = () => {
     }, 5000);
   };
 
+  const handleBackClick = () => {
+    router.back();
+  };
+
   return (
     <div className="creation2">
       <div className="cont1">
@@ -28,7 +32,7 @@ const Newwallet = () => {
               </div>
             </Link>
 
-            <div className="cirle">
+            <div className="cirle" onClick={handleBackClick}>
               <Image src="/circle-x.png" alt="logo" width={24} height={24} />
             </div>
           </div>

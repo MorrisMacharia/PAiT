@@ -15,6 +15,10 @@ body {
       ),
       var(--Background, #0b132b);
   }
+  .circle3{
+    background-color: transparent;
+    border: none;
+  }
   .cont3 {
     display: flex;
     width: 393px;
@@ -150,6 +154,7 @@ gap: 30px;
       align-self: stretch;
     }
   .saved1{
+    width: 242px;
       color: white;
       display: flex;
       padding-bottom: 30px;
@@ -161,9 +166,14 @@ gap: 30px;
       align-self: stretch;
       border: none;
       border-radius: var(--Corner-Medium, 12px);
-      background: #6fffe9;
+      background: #45A5A3;
+  }
+  .sav{
+    text-decoration: none;
   }
   .forgot{
+    border: none;
+    background-color: #0b132b;
       display: flex;
   padding: var(--sds-size-space-0);
   align-items: center;

@@ -1,9 +1,18 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import "./page.css";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const VerifyPhrases = () => {
+  const router = useRouter();
+
+  const handleBackClick = () => {
+    router.back();
+  };
+
   return (
     <div className="creation4">
       <div className="cont3">
@@ -14,10 +23,9 @@ const VerifyPhrases = () => {
                 <Image src="/logo.png" alt="logo" width={86} height={24} />
               </div>
             </Link>
-
-            <div className="cirle3">
-              <Image src="/circle-x.png" alt="logo" width={24} height={24} />
-            </div>
+            <button className="circle3" onClick={handleBackClick}>
+              <Image src="/circle-x.png" alt="back" width={24} height={24} />
+            </button>
           </div>
           <div className="description3">
             <div className="sec">Verify Secret Phrases</div>
@@ -35,15 +43,14 @@ const VerifyPhrases = () => {
                 <div className="op1">
                   <div className="word">dreams</div>
                 </div>
-                <div className="op2">
-                  <div className="word2">word</div>
+                <div className="op1">
+                  <div className="word">word</div>
                 </div>
                 <div className="op1">
                   <div className="word">echoes</div>
                 </div>
               </div>
             </div>
-
             <div className="q1">
               <div className="what">
                 What is the <span className="styled-span">second</span> phrase?
@@ -55,19 +62,18 @@ const VerifyPhrases = () => {
                 <div className="op1">
                   <div className="word">velvet</div>
                 </div>
-                <div className="op2">
-                  <div className="word2">galactic</div>
+                <div className="op1">
+                  <div className="word">galactic</div>
                 </div>
               </div>
             </div>
-
             <div className="q1">
               <div className="what">
                 What is the <span className="styled-span">last</span> phrase?
               </div>
               <div className="options">
-                <div className="op2">
-                  <div className="word2">shine</div>
+                <div className="op1">
+                  <div className="word">shine</div>
                 </div>
                 <div className="op1">
                   <div className="word">rainbow</div>
@@ -78,9 +84,8 @@ const VerifyPhrases = () => {
               </div>
             </div>
           </div>
-
           <div className="actions">
-            <div className="forgot">
+            <button className="forgot" onClick={handleBackClick}>
               <div>
                 <Image
                   src="/chevron-left.png"
@@ -90,9 +95,11 @@ const VerifyPhrases = () => {
                 />
               </div>
               <div className="write">I forgot to write them down, go back</div>
-            </div>
+            </button>
             <div className="actions2">
-              <button className="saved1">Finish</button>
+              <Link className="sav" href="/Homewallet">
+                <button className="saved1">Finish</button>
+              </Link>
             </div>
           </div>
         </div>

@@ -33,6 +33,10 @@ body {
   align-items: center;
   align-self: stretch;
 }
+.circle2{
+  border: none;
+  background-color: transparent;
+}
 .description2 {
   display: flex;
   padding: var(--sds-size-space-0);

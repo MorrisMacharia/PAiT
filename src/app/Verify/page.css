@@ -33,6 +33,10 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
+.circle3{
+  border: none;
+  background-color: transparent;
+}
 .top4 {
   display: flex;
   padding-bottom: 30px;
@@ -132,27 +136,33 @@ body {
     align-self: stretch;
 }
 .actions2 {
+  height: 200px;
     display: flex;
-    padding-bottom: 30px;
+    /* padding-bottom: 30px; */
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
     gap: var(--sds-size-space-400);
+    flex: 1 0 0;
     align-self: stretch;
   }
+  .sav{
+    text-decoration: none;
+  }
 .saved1{
-    color: white;
-    display: flex;
-    padding-bottom: 30px;
-    height: 40px;
-    padding: var(--sds-size-space-200) var(--sds-size-space-400);
-    justify-content: center;
-    align-items: center;
-    gap: var(--sds-size-space-300);
-    align-self: stretch;
-    border: none;
-    border-radius: var(--Corner-Medium, 12px);
-    background: var(--Border, #3a506b);
+  width: 242px;
+  color: white;
+  display: flex;
+  padding-bottom: 30px;
+  height: 40px;
+  padding: var(--sds-size-space-200) var(--sds-size-space-400);
+  justify-content: center;
+  align-items: center;
+  gap: var(--sds-size-space-300);
+  align-self: stretch;
+  border: none;
+  border-radius: var(--Corner-Medium, 12px);
+  background: var(--Border, #3a506b);
 }
 .forgot{
     display: flex;

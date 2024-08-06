@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import "../CreateNewWallet/page.css";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const wordList = [
   "alpha",
@@ -42,6 +43,7 @@ const generateSecretPhrase = () => {
 
 const CreateNewWallet = () => {
   const [secretPhrase, setSecretPhrase] = useState([]);
+  const router = useRouter();
 
   useEffect(() => {
     setSecretPhrase(generateSecretPhrase());
@@ -59,21 +61,23 @@ const CreateNewWallet = () => {
       });
   };
 
+  const handleBackClick = () => {
+    router.back();
+  };
+
   return (
     <div className="creation3">
       <div className="cont2">
         <div className="panel3">
           <div className="top3">
-
             <Link href="/Home">
-            
-            <div className="logo12">
-              <Image src="/logo.png" alt="logo" width={86} height={24} />
-            </div>
+              <div className="logo12">
+                <Image src="/logo.png" alt="logo" width={86} height={24} />
+              </div>
             </Link>
-            <div className="cirle2">
-              <Image src="/circle-x.png" alt="logo" width={24} height={24} />
-            </div>
+            <button className="circle2" onClick={handleBackClick}>
+              <Image src="/circle-x.png" alt="back" width={24} height={24} />
+            </button>
           </div>
           <div className="description2">
             <div className="wall2">Create New Wallet</div>
@@ -158,7 +162,7 @@ const CreateNewWallet = () => {
             </div>
           </div>
           <div className="actions2">
-          <Link className="action3" href="/Verify"> 
+            <Link className="action3" href="/Verify">
               <button className="saved1">I have saved them, continue</button>
             </Link>
           </div>
