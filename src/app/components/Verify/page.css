@@ -180,3 +180,11 @@ font-style: normal;
 font-weight: 500;
 line-height: normal;
 }
+
+.op1 {
+  color: #8A94B0;
+}
+
+.op1.error {
+  border: 1px solid red;
+}

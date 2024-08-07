@@ -1,3 +1,4 @@
+// CreateNewWallet.js
 "use client";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
@@ -19,7 +20,7 @@ const wordList = [
   "lambda",
   "mu",
   "nu",
-  "xi",
+  "twelve",
   "omicron",
   "pi",
   "rho",
@@ -63,6 +64,11 @@ const CreateNewWallet = () => {
 
   const handleBackClick = () => {
     router.back();
+  };
+
+  const handleContinue = () => {
+    const query = secretPhrase.map((phrase, index) => `phrase${index}=${phrase}`).join('&');
+    router.push(`/Verify?${query}`);
   };
 
   return (
@@ -162,9 +168,9 @@ const CreateNewWallet = () => {
             </div>
           </div>
           <div className="actions2">
-            <Link className="action3" href="/Verify">
-              <button className="saved1">I have saved them, continue</button>
-            </Link>
+            <button className="saved1" onClick={handleContinue}>
+              I have saved them, continue
+            </button>
           </div>
         </div>
       </div>

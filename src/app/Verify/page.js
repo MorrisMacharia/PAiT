@@ -1,114 +1,18 @@
-"use client"
+// app/Verify/page.js
+import React, { Suspense } from 'react';
+import dynamic from 'next/dynamic';
 
-import React from "react";
-import "../Verify/page.css";
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+// Dynamically import the Verify component to ensure it is only rendered on the client side
+const Verify = dynamic(() => import('../components/Verify/page.js'), {
+  ssr: true, // Disable server-side rendering for this component
+});
 
-const Verify = () => {
-  const router = useRouter();
-
-  const handleBackClick = () => {
-    router.back();
-  };
-
+const VerifyPage = () => {
   return (
-    <div className="creation4">
-      <div className="cont3">
-        <div className="panel4">
-          <div className="top4">
-            <Link href="/Home">
-              <div className="logo13">
-                <Image src="/logo.png" alt="logo" width={86} height={24} />
-              </div>
-            </Link>
-            <button className="circle3" onClick={handleBackClick}>
-              <Image src="/circle-x.png" alt="back" width={24} height={24} />
-            </button>
-          </div>
-          <div className="description3">
-            <div className="sec">Verify Secret Phrases</div>
-            <div className="confirm">
-              Confirm that you have saved the phrase by selecting the correct
-              options.
-            </div>
-          </div>
-          <div className="questions">
-            <div className="q1">
-              <div className="what">
-                What is the <span className="styled-span">first</span> phrase?
-              </div>
-              <div className="options">
-                <div className="op1">
-                  <div className="word">dreams</div>
-                </div>
-                <div className="op1">
-                  <div className="word">word</div>
-                </div>
-                <div className="op1">
-                  <div className="word">echoes</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="q1">
-              <div className="what">
-                What is the <span className="styled-span">second</span> phrase?
-              </div>
-              <div className="options">
-                <div className="op1">
-                  <div className="word">quantum</div>
-                </div>
-                <div className="op1">
-                  <div className="word">velvet</div>
-                </div>
-                <div className="op1">
-                  <div className="word">galactic</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="q1">
-              <div className="what">
-                What is the <span className="styled-span">last</span> phrase?
-              </div>
-              <div className="options">
-                <div className="op1">
-                  <div className="word">shine</div>
-                </div>
-                <div className="op1">
-                  <div className="word">rainbow</div>
-                </div>
-                <div className="op1">
-                  <div className="word">serenade</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="actions">
-            <div className="forgot" onClick={handleBackClick}>
-              <div>
-                <Image
-                  src="/chevron-left.png"
-                  alt="forgot"
-                  width={24}
-                  height={24}
-                />
-              </div>
-              <div className="write">I forgot to write them down, go back</div>
-            </div>
-            <div className="actions2">
-              <Link className="sav" href="/VerifyPhrases">
-                <button className="saved1">Finish</button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Verify />
+    </Suspense>
   );
 };
 
-export default Verify;
+export default VerifyPage;
