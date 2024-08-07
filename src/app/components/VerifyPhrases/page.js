@@ -96,7 +96,7 @@ const VerifyPhrases = () => {
               <div className="write">I forgot to write them down, go back</div>
             </div>
             <div className="actions2">
-              <Link className="sav" href="/Home">
+              <Link className="sav" href="/Homewallet">
                 <button className="saved2">Finish</button>
               </Link>
             </div>
