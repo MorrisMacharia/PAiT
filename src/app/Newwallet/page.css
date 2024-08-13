@@ -46,7 +46,7 @@ body {
 .wall2 {
   color: #fff;
   text-align: center;
-  font-family: Poppins;
+
   font-size: var(--Title-Large-Size, 22px);
   font-style: normal;
   font-weight: 500;
@@ -78,13 +78,13 @@ body {
 }
 .secrets {
   color: var(--Text, #f2f2fb);
-  font-family: Poppins;
+
   font-size: var(--Label-Medium-Size, 12px);
   font-style: normal;
   font-weight: 700;
   line-height: 20px; /* 166.667% */
   color: var(--Text, #f2f2fb);
-  font-family: Poppins;
+
   font-size: var(--Label-Medium-Size, 12px);
   font-style: normal;
   font-weight: 400;
@@ -126,7 +126,7 @@ body {
 }
 .creating {
   color: var(--Background, #0b132b);
-  font-family: Poppins;
+
   font-size: var(--Label-Large-Size, 14px);
   font-style: normal;
   font-weight: 500;

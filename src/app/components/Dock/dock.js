@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
 
-const Dock = () => {
+const BottomNavbar = () => {
    const router=useRouter();
 
    const handleonClick=()=>{
@@ -49,4 +49,4 @@ const Dock = () => {
   );
 };
 
-export default Dock;
+export default BottomNavbar;
