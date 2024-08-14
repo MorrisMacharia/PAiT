@@ -1,38 +1,16 @@
-body {
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  display: flex;
-}
+
 .creation4 {
-  width: 393px;
-  height: 852px;
-  border-radius: 55px;
-  background: linear-gradient(
-      180deg,
-      rgba(58, 80, 107, 0.2) 0%,
-      rgba(58, 80, 107, 0) 100%
-    ),
-    var(--Background, #0b132b);
-}
-.cont3 {
-  display: flex;
-  width: 393px;
-  height: 852px;
-  padding-top: var(--sds-size-space-1600);
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  /* flex-shrink: 0; */
-}
-.panel4 {
-  width: 242.25px;
-  height: 712px;
+  width: 100%;
+  max-width: 393px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+gap: 50px;
+ justify-content: center;
 }
+.lab1{
+  gap: 20px;
+}
+
 .circle3 {
   border: none;
   background-color: transparent;
@@ -42,15 +20,17 @@ body {
   padding-bottom: 30px;
   justify-content: space-between;
   align-items: center;
-  /* align-self: stretch; */
 }
 .description3 {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 30px;
+}
+.table{
   display: flex;
-  padding: var(--sds-size-space-0);
   flex-direction: column;
-  align-items: center;
-  gap: var(--sds-size-space-1200);
-  /* align-self: stretch; */
+  gap: 15px;
 }
 .sec {
   /* align-self: stretch; */
@@ -65,17 +45,16 @@ body {
 .confirm {
   color: var(--Text-Muted, #8a94b0);
 
-  font-size: 10px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 500;
-  line-height: 20px; /* 166.667% */
-  /* align-self: stretch; */
+  text-align: center;
 }
 .questions {
   display: flex;
   flex-direction: column;
   align-self: stretch;
-  gap: 12px;
+  gap: 15px;
 }
 .q1 {
   display: flex;
@@ -84,7 +63,6 @@ body {
   justify-content: center;
   align-items: flex-start;
   gap: 10px;
-  /* align-self: stretch; */
 }
 .what {
   color: var(--Text, #f2f2fb);
@@ -93,7 +71,6 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: 20px; /* 142.857% */
-  /* color: var(--Fluorescent-Cyan, #6fffe9); */
 
   font-size: var(--Label-Large-Size, 14px);
   font-style: normal;

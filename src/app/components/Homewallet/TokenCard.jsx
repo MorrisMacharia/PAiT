@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import "../../Home/home.css";
+import "../../Layout/home.css";
 
 export function TokenCard({ name, price, logo, description }) {
   return (

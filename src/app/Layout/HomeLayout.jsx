@@ -11,6 +11,7 @@ export default function HomeLayout({ children }) {
         height: "100%",
       }}
     >
+      
       <main>{children}</main>
       <footer>
         <BottomNavbar />

@@ -2,10 +2,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import "./Home/home.css";
+import "./Layout/home.css";
 import Loading from "./loading";
 import { IoIosLink } from "react-icons/io";
-import HomeLayout from "./Home/HomeLayout";
+import HomeLayout from "./Layout/HomeLayout";
 import { TokenCard } from "./components/Homewallet";
 import PaitCard from "./components/Homewallet/Card";
 import HomeBalance from "./components/Homewallet/Balance";
@@ -51,9 +51,9 @@ export default function Home() {
         {showBal ? (
           <HomeBalance />
         ) : (
-          <Link href="/Home" className="home-link">
+          <div  className="home-link">
             <Image src="/Clip.png" alt="home" width={122} height={34} />
-          </Link>
+          </div>
         )}
         <PaitCard />
         <h2>Other Tokens</h2>

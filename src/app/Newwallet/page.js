@@ -1,122 +1,71 @@
 "use client";
 
-import React, { useState } from "react";
-import Image from "next/image";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import WalletLayout from "../Layout/WalletLayout";
 import "../Newwallet/page.css";
-import Link from "next/link";
+import { WalletNav } from "../components/WalletNav/WalletNav";
 
 const Newwallet = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true); // Start with loading state as true
   const router = useRouter();
 
-  const handleButtonClick = () => {
-    setIsLoading(true);
-    setTimeout(() => {
-      router.push("/CreateNewWallet");
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
     }, 5000);
-  };
 
-  const handleBackClick = () => {
-    router.back();
-  };
+    return () => clearTimeout(timer);
+  }, [router]);
+
+  const textData = [
+    {
+      icon: "/badge-info.png",
+      title: "These are your wallet’s secret phrases.",
+      description: "They let you access the wallet.",
+    },
+    {
+      icon: "/book-key.png",
+      title: "Store these in a secure place.",
+      description: "Keep your wallet safe. Never share them.",
+    },
+    {
+      icon: "/triangle-alert.png",
+      title: "Your wallet cannot be recovered if you lose the phrases.",
+      description: "",
+    },
+  ];
 
   return (
-    <div className="creation2">
-      <div className="cont1">
-        <div className="panel2">
-          <div className="top2">
-            <Link href="/Home">
-              <div className="logo11">
-                <Image src="/logo.png" alt="logo" width={86} height={24} />
-              </div>
-            </Link>
-
-            <div className="cirle" onClick={handleBackClick}>
-              <Image src="/circle-x.png" alt="logo" width={24} height={24} />
-            </div>
-          </div>
-          <div className="description2">
-            <div className="wall2">Create New Wallet</div>
-            <div className="tips">
-              <div className="tip1">
-                <div className="iconcircle">
-                  <div>
-                    <Image
-                      src="/badge-info.png"
-                      alt="icon"
-                      width={24}
-                      height={24}
-                    />
-                  </div>
-
-                  <div className="secrets">
-                    These are your wallet’s secret phrases. <br></br> They let
-                    you access the wallet.
-                  </div>
+    <WalletLayout hideFooter={isLoading}> {/* Pass hideFooter prop */}
+      <div className="creation2">
+        <div className="description2">
+          <h1 className="wall2">Create New Wallet</h1>
+          <div className="tips">
+            {textData.map((item, index) => (
+              <div className="tip1" key={index}>
+                <img src={item.icon} alt="icon" width={24} height={24} />
+                <div className="secrets">
+                  {item.title}
+                  <br />
+                  {item.description}
                 </div>
               </div>
-              <div className="tip1">
-                <div className="iconcircle">
-                  <div>
-                    <Image
-                      src="/book-key.png"
-                      alt="icon"
-                      width={24}
-                      height={24}
-                    />
-                  </div>
-
-                  <div className="secrets">
-                    Store these in a secure place <br></br> to keep your wallet
-                    safe. Never share them.
-                  </div>
-                </div>
-              </div>
-              <div className="tip1">
-                <div className="iconcircle">
-                  <div>
-                    <Image
-                      src="/triangle-alert.png"
-                      alt="icon"
-                      width={24}
-                      height={24}
-                    />
-                  </div>
-
-                  <div className="secrets">
-                    Your wallet can not be recovered if you <br></br>loose the
-                    phrases.
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <button className="copy" onClick={handleButtonClick}>
-              <div className="phrases">
-                {isLoading ? (
-                  <div className="loader-circle"></div>
-                ) : (
-                  <Image
-                    src="/loader-circle.png"
-                    alt="load"
-                    width={24}
-                    height={24}
-                  />
-                )}
-                <div className="creating">Create Wallet</div>
-              </div>
-            </button>
+            ))}
           </div>
 
-          <div className="actions2">
-            <Link href="/VerifyPhrases">
-              <button className="saved">I have saved them, continue</button>
-            </Link>
+          <div className="phrases">
+            {isLoading ? (
+              <div className="loader-circle black"></div> 
+            ) : (
+
+<WalletNav />
+
+            )}
           </div>
         </div>
       </div>
-    </div>
+    </WalletLayout>
   );
 };
 
