@@ -12,6 +12,9 @@ const Connectwallet = () => {
   const handleBackClick = () => {
     router.back();
   };
+  // const handleShowBal = () => {
+  //   setShowBal(!showBal);
+  // };
 
   return (
 
@@ -55,7 +58,7 @@ const Connectwallet = () => {
         </Link>
 
         <Link className="crt1" href="/Homewallet">
-          <button className="link">
+          <button className="link" >
             {" "}
             <div>
               <Image src="/link.png" alt="link" width={24} height={24} />
