@@ -6,6 +6,8 @@
   gap: 30px;
   .h1 {
     color: antiquewhite;
+    font-weight: 500;
+    font-style: normal;
   }
   .p1 {
     color: var(--Text-Muted, #8a94b0);
@@ -23,7 +25,8 @@
 }
 .what {
   color: white;
-  font-weight: 500;
+  font-weight: 700;
+  font-size: 14px;
 }
 .sp {
   color: aqua;
@@ -44,6 +47,8 @@
 .btns{
   display: flex;
   justify-content: space-between;
+  font-weight: 500;
+  font-size: 14px;
   .btn{
     font-size: 14px;
     font-weight: 600;
@@ -56,3 +61,4 @@
     transition: 0.3s;
   }
 }
+

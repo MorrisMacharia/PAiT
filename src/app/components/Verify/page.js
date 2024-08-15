@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import WalletLayout from "@/app/Layout/WalletLayout";
 import "./page.css";
 
@@ -11,11 +11,23 @@ const phrases = [
 ];
 
 const Verify = () => {
+  const [selectedOptions, setSelectedOptions] = useState({});
+  const [allSelected, setAllSelected] = useState(false);
+  const handleClick = (phraseIndex, optionIndex) => {
+    setSelectedOptions(prev => ({
+      ...prev,
+      [phraseIndex]: optionIndex
+    }));
+  };
+  useEffect(() => {
+    const allPhrasesFilled = Object.keys(selectedOptions).length === phrases.length;
+    setAllSelected(allPhrasesFilled);
+  }, [selectedOptions]);
   return (
-    <WalletLayout>
+    <WalletLayout allPhrasesFilled={allSelected}>
       <div className="holder">
         <div className="description">
-          <h1 className="h1">Verify Secret Phrases</h1>
+          <h3 className="h1">Verify Secret Phrases</h3>
           <p className="p1">
             Confirm that you have saved the phrase by selecting the correct
             options.
@@ -29,7 +41,14 @@ const Verify = () => {
               </p>
               <div className="btns">
                 {phrase.options.map((option, idx) => (
-                  <button key={idx} className="btn">
+                  <button
+                    key={idx}
+                    className="btn"
+                    style={{
+                      backgroundColor: selectedOptions[index] === idx ? 'white' : '',
+                    }}
+                    onClick={() => handleClick(index, idx)}
+                  >
                     {option}
                   </button>
                 ))}
