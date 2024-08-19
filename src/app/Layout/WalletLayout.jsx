@@ -2,7 +2,11 @@ import React from "react";
 import { WalletNav } from "../components/WalletNav/WalletNav";
 import { WalletFooter } from "../components/WalletFooter/WalletFooter";
 
-export default function WalletLayout({ children, hideFooter, allPhrasesFilled }) {
+export default function WalletLayout({
+  children,
+  hideFooter,
+  allPhrasesFilled,
+}) {
   return (
     <div
       style={{
@@ -12,10 +16,16 @@ export default function WalletLayout({ children, hideFooter, allPhrasesFilled })
         justifyContent: "space-around",
       }}
     >
-      <WalletNav />
+      <nav>
+        <WalletNav />
+      </nav>
 
-      <main>{children}</main>
-      {!hideFooter && <WalletFooter allPhrasesFilled={allPhrasesFilled} />}
+      {children}
+      {!hideFooter && (
+        <footer>
+          <WalletFooter allPhrasesFilled={allPhrasesFilled} />
+        </footer>
+      )}
     </div>
   );
 }

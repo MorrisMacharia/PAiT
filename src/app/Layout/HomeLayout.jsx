@@ -12,7 +12,7 @@ export default function HomeLayout({ children }) {
       }}
     >
       
-      <main>{children}</main>
+      {children}
       <footer>
         <BottomNavbar />
       </footer>

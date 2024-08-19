@@ -7,7 +7,7 @@ import "../Newwallet/page.css";
 import { WalletNav } from "../components/WalletNav/WalletNav";
 
 const Newwallet = () => {
-  const [isLoading, setIsLoading] = useState(true); // Start with loading state as true
+  const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const Newwallet = () => {
 
   return (
     <WalletLayout hideFooter={isLoading}> {/* Pass hideFooter prop */}
-      <div className="creation2">
+      {/* <div className="creation2"> */}
         <div className="description2">
           <h1 className="wall2">Create New Wallet</h1>
           <div className="tips">
@@ -64,7 +64,7 @@ const Newwallet = () => {
             )}
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </WalletLayout>
   );
 };

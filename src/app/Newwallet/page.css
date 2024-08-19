@@ -1,5 +1,11 @@
 
-
+.creation2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+}
 .description2 {
   display: flex;
   flex-direction: column;
