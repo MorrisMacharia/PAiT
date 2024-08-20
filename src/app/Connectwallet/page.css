@@ -1,4 +1,4 @@
-.creation1{
+.creation1 {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -7,16 +7,17 @@
   gap: 70px;
 }
 
-
 .circle {
   background-color: transparent;
   border: none;
 }
+
 .top {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .description {
   display: flex;
   flex-direction: column;
@@ -24,10 +25,10 @@
   gap: 50px;
 }
 
-.wall {
+.wall,
+.web {
   color: #fff;
   text-align: center;
-
   font-size: var(--Title-Large-Size, 22px);
   font-style: normal;
   font-weight: 500;
@@ -36,14 +37,8 @@
 
 .web {
   align-self: stretch;
-  color: #fff;
-  text-align: center;
-
-  font-size: var(--Title-Large-Size, 22px);
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
 }
+
 .actions {
   display: flex;
   flex-direction: column;
@@ -51,8 +46,10 @@
   align-content: center;
   gap: 30px;
 }
-.new {
-  width: 242px;
+
+.new,
+.link {
+  width: 100%; /* Make buttons responsive to screen width */
   height: 40px;
   display: flex;
   padding: var(--sds-size-space-200) var(--sds-size-space-400);
@@ -61,24 +58,42 @@
   gap: var(--sds-size-space-300);
   border: none;
   border-radius: var(--Corner-Medium, 12px);
+}
+
+.new {
   background: var(--Primary-action, #45a5a3);
 }
+
 .link {
-  width: 242px;
-  height: 40px;
-  display: flex;
-  padding: var(--sds-size-space-200) var(--sds-size-space-400);
-  justify-content: center;
-  align-items: center;
-  gap: var(--sds-size-space-300);
-  align-self: stretch;
-  border: none;
-  border-radius: var(--Corner-Medium, 12px);
   background: var(--Border, #3a506b);
 }
+
 .crt1 {
   display: flex;
   align-items: center;
   gap: 20px;
   text-decoration: none;
+}
+
+/* Responsive adjustments */
+
+@media only screen and (max-width: 768px) { /* For tablets and iPads */
+  .creation1 {
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 100%; /* Remove max-width constraint */
+  }
+}
+
+@media only screen and (max-width: 480px) { /* For phones */
+  .creation1 {
+    max-width: 100%; /* Remove max-width constraint */
+  }
+  .actions {
+    
+    gap: 20px; /* Reduce gap between buttons for smaller screens */
+  }
+  .crt1{
+    width: 100%;
+  }
 }

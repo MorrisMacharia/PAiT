@@ -105,3 +105,8 @@
   cursor: pointer;
   max-width: 140px;
 }
+@media (max-width: 768px){
+  .one{
+    display: flex;
+  }
+}

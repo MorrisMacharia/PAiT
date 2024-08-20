@@ -10,7 +10,7 @@ export function TokenCard({ name, price, logo, description }) {
       </div>
       <div className="token-info">
         <div className="token-name">{name}</div>
-        <span>
+        <span className="sp">
           <div className="token-price">{price}</div>
           <div className="token-description">{description}</div>
         </span>
