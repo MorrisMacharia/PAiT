@@ -1,21 +1,66 @@
-import React from "react";
+"use client"
+
+import React, { useState, useEffect } from "react";
 import { WalletNav } from "../components/WalletNav/WalletNav";
 import { WalletFooter } from "../components/WalletFooter/WalletFooter";
 
 export default function WalletLayout({ children, allPhrasesFilled, onFinish }) {
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
+
+  useEffect(() => {
+    // Only run this effect if window is available
+    if (typeof window !== "undefined") {
+      const handleResize = () => setWindowWidth(window.innerWidth);
+      window.addEventListener("resize", handleResize);
+
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
+  }, []);
+
+  // Define responsive styles
+  const layoutStyle = {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-around",
+    height: "100vh",
+    minHeight: "100vh",
+    padding: windowWidth > 1200 ? "1rem" : windowWidth > 768 ? "0.8rem" : "0.3rem",
+  };
+
+  const navStyle = {
+    width: "100%",
+    padding: windowWidth > 1200 ? "1rem" : windowWidth > 768 ? "0.8rem" : "0.3rem",
+  };
+
+  const mainContentStyle = {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-around",
+    padding: windowWidth > 1200 ? "1rem" : windowWidth > 768 ? "0.8rem" : "0.3rem",
+  };
+
+  const footerStyle = {
+    width: "100%",
+    padding: windowWidth > 1200 ? "1rem" : windowWidth > 768 ? "0.8rem" : "0.3rem",
+  };
+
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "100%", justifyContent: "space-around" }}>
-      <nav>
+    <div style={layoutStyle}>
+      <nav style={navStyle}>
         <WalletNav />
       </nav>
 
-      {children}
+      <main style={mainContentStyle}>
+        {children}
+      </main>
 
-     
-        <footer>
-          <WalletFooter allPhrasesFilled={allPhrasesFilled} onFinish={onFinish} />
-        </footer>
-      
+      <footer style={footerStyle}>
+        <WalletFooter allPhrasesFilled={allPhrasesFilled} onFinish={onFinish} />
+      </footer>
     </div>
   );
 }

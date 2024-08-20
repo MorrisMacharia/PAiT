@@ -56,3 +56,41 @@
   gap: var(--sds-size-space-0);
   flex-shrink: 0;
 }
+@media (max-width: 768px) {
+  .hm {
+    font-size: 12px;
+  }
+
+  .dock {
+    padding: 8px 0;
+  }
+
+  .dock1, .dock2 {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dock {
+    display: flex;
+   
+    padding: 5px 0;
+  }
+
+  .btn11 {
+    margin-bottom: 10px;
+  }
+
+  .hm {
+    font-size: 10px;
+  }
+
+  .dock1, .dock2 {
+    padding: 5px;
+  }
+
+  .dock img {
+    width: 20px;
+    height: auto;
+  }
+}
