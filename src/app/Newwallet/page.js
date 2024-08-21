@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import WalletLayout from "../Layout/WalletLayout";
 import "../Newwallet/page.css";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
 
 const Newwallet = () => {
@@ -27,19 +27,26 @@ const Newwallet = () => {
   const handleFinish = () => {
     if (isFinishEnabled) {
       const searchParams = new URLSearchParams({
-        phrases: JSON.stringify(generatedPhrases.slice(0, 3))
+        phrases: JSON.stringify(generatedPhrases.slice(0, 3)),
       });
       router.push(`/Verify?${searchParams.toString()}`);
     }
   };
 
   const generatePhrases = () => {
- 
     return [
-      "Phrase 1", "Phrase 2", "Phrase 3",
-      "Phrase 4", "Phrase 5", "Phrase 6",
-      "Phrase 7", "Phrase 8", "Phrase 9",
-      "Phrase 10", "Phrase 11", "Phrase 12"
+      "alpha",
+      "beta",
+      "gamma",
+      "delta",
+      "epsilon",
+      "zeta",
+      "eta",
+      "theta",
+      "iota",
+      "kappa",
+      "lambda",
+      "omicron",
     ];
   };
 
@@ -62,10 +69,10 @@ const Newwallet = () => {
   ];
 
   return (
-    <WalletLayout 
-      hideFooter={isLoading} 
-      allPhrasesFilled={isFinishEnabled} 
-      onFinish={handleFinish} 
+    <WalletLayout
+      hideFooter={isLoading}
+      allPhrasesFilled={isFinishEnabled}
+      onFinish={handleFinish}
     >
       <div className="description2">
         <h1 className="wall2">Create New Wallet</h1>
@@ -81,9 +88,9 @@ const Newwallet = () => {
             </div>
           ))}
         </div>
-        <div 
-          className="phrases" 
-          onClick={handleClick} 
+        <div
+          className="phrases"
+          onClick={handleClick}
           style={{ cursor: isLoading ? "pointer" : "default" }}
         >
           {isLoading ? (
