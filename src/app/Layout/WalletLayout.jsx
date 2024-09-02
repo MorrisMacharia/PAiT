@@ -23,6 +23,7 @@ export default function WalletLayout({ children, allPhrasesFilled, onFinish }) {
 
   // Define responsive styles
   const layoutStyle = {
+    // width: "100%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-around",
@@ -37,6 +38,7 @@ export default function WalletLayout({ children, allPhrasesFilled, onFinish }) {
   };
 
   const mainContentStyle = {
+    width: "100%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-around",

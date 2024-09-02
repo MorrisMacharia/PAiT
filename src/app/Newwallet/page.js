@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import WalletLayout from "../Layout/WalletLayout";
@@ -7,6 +6,7 @@ import "../Newwallet/page.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
+import { generateMnemonicPhrase, validateMnemonicPhrase } from "../utils/utils.jsx";
 
 const Newwallet = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,8 +18,9 @@ const Newwallet = () => {
     if (isLoading) {
       setIsLoading(false);
       setIsFinishEnabled(true);
-      const phrases = generatePhrases();
-      setGeneratedPhrases(phrases);
+      const mnemonic = generateMnemonicPhrase();
+      const phrasesArray = mnemonic.split(" ");
+      setGeneratedPhrases(phrasesArray);
       toast.success("Wallet created");
     }
   };
@@ -31,23 +32,6 @@ const Newwallet = () => {
       });
       router.push(`/Verify?${searchParams.toString()}`);
     }
-  };
-
-  const generatePhrases = () => {
-    return [
-      "alpha",
-      "beta",
-      "gamma",
-      "delta",
-      "epsilon",
-      "zeta",
-      "eta",
-      "theta",
-      "iota",
-      "kappa",
-      "lambda",
-      "omicron",
-    ];
   };
 
   const textData = [
@@ -109,7 +93,25 @@ const Newwallet = () => {
           )}
         </div>
       </div>
-      <ToastContainer />
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnHover
+        draggable
+        pauseOnFocusLoss
+        style={{
+          textAlign: "center",
+          width: "50%",
+          maxWidth: "300px",
+          minHeight: "20px",
+          padding: "10px",
+          margin: "0 auto",
+          borderRadius: "12px",
+          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+        }}
+      />
     </WalletLayout>
   );
 };

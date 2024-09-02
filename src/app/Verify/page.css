@@ -1,4 +1,5 @@
 .description {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,10 +19,14 @@
   }
 }
 .holder {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 60px;
-  padding-bottom: 50px;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  height: 100%;
+  /* padding-bottom: 50px; */
 }
 .what {
   color: white;
@@ -45,11 +50,13 @@
   width: 100%;
 }
 .btns{
+  width: 100%;
   display: flex;
   justify-content: space-between;
   font-weight: 500;
   font-size: 14px;
   .btn{
+    width: 100%;
     font-size: 14px;
     font-weight: 600;
     color: rgb(138, 148, 176);
@@ -62,3 +69,44 @@
   }
 }
 
+.grid-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  grid-template-rows: repeat(3, 1fr); /* 3 equal rows */
+  gap: 10px;
+  /* margin-bottom: 20px; */
+  width: inherit; /* Ensure grid takes full width */
+  box-sizing: border-box;
+}
+
+.phrase-item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-phrase {
+  width: 100%;
+  padding: 10px;
+  border: none; /* Remove default border */
+  border-radius: 12px;
+  /* box-sizing: border-box; */
+  text-align: center;
+  font-size: 10px; /* Adjust font size as needed */
+  background-color: rgb(28, 37, 65); /* Default background color */
+  color: var(--Text-Muted, #8a94b0); /* Default text color */
+}
+
+.input-phrase:focus {
+  /* No changes on focus */
+  background-color: rgb(28, 37, 65); /* Ensure background stays the same on focus */
+  color: var(--Text-Muted, #8a94b0); /* Ensure text color stays the same on focus */
+}
+
+.input-phrase:valid:hover,
+.input-phrase:not(:placeholder-shown):hover {
+  background-color: white; /* Background color on hover after phrase is entered */
+  color: black; /* Text color on hover after phrase is entered */
+}

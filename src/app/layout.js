@@ -1,4 +1,4 @@
-import { poppins } from "@/utils/font";
+import { poppins } from "@/app/utils/font";
 import "./globals.css";
 
 export default function RootLayout({ children }) {

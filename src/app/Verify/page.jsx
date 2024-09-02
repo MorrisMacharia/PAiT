@@ -1,91 +1,75 @@
 "use client";
-
 import React, { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import WalletLayout from "@/app/Layout/WalletLayout";
 import "./page.css";
+import { validateMnemonicPhrase } from "../utils/utils.jsx";
 
 const Verify = () => {
-  const [selectedOptions, setSelectedOptions] = useState({});
-  const [allSelected, setAllSelected] = useState(false);
+  const [enteredPhrases, setEnteredPhrases] = useState(Array(9).fill("")); // Only 9 phrases for the 3x3 grid
   const [phrases, setPhrases] = useState([]);
+  const [isVerified, setIsVerified] = useState(false);
+  const [error, setError] = useState("");
   const searchParams = useSearchParams();
+  const router = useRouter();
 
+  // Retrieve only the first 3 phrases from the Newwallet page
   useEffect(() => {
-    const routerPhrases = searchParams.get('phrases');
+    const routerPhrases = searchParams.get("phrases");
     if (routerPhrases) {
       const parsedPhrases = JSON.parse(routerPhrases);
-      setPhrases(parsedPhrases.map((phrase, index) => ({
-        question: `${index + 1}${getOrdinalSuffix(index + 1)}`,
-        options: shuffleArray([phrase, ...generateRandomOptions(phrase)])
-      })));
+      setPhrases(parsedPhrases.slice(0, 9)); // We are only interested in the first 9 phrases
     }
   }, [searchParams]);
 
-  const handleClick = (phraseIndex, optionIndex) => {
-    setSelectedOptions(prev => ({
-      ...prev,
-      [phraseIndex]: optionIndex
-    }));
-  };
-
+  // Check if the entered phrases match the original ones
   useEffect(() => {
-    const allPhrasesFilled = Object.keys(selectedOptions).length === phrases.length;
-    setAllSelected(allPhrasesFilled);
-  }, [selectedOptions, phrases]);
+    const allPhrasesEntered = enteredPhrases.every((phrase) => phrase.trim() !== "");
 
-  const getOrdinalSuffix = (num) => {
-    const j = num % 10;
-    const k = num % 100;
-    if (j === 1 && k !== 11) return "st";
-    if (j === 2 && k !== 12) return "nd";
-    if (j === 3 && k !== 13) return "rd";
-    return "th";
-  };
+    if (allPhrasesEntered) {
+      const isValid = enteredPhrases.every((phrase, index) =>
+        phrase.trim() === phrases[index]
+      );
 
-  const generateRandomOptions = (correctPhrase) => {
-    // This is a placeholder function. In a real application, you'd use a more sophisticated method to generate plausible alternatives.
-    return ["Option A", "Option B"].filter(option => option !== correctPhrase);
-  };
-
-  const shuffleArray = (array) => {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
+      if (isValid) {
+        const mnemonicPhrase = enteredPhrases.join(" ").trim();
+        if (validateMnemonicPhrase(mnemonicPhrase)) {
+          setIsVerified(true);
+          setError("");
+          router.push("/Dashboard"); // Redirect to dashboard on successful verification
+        } else {
+          setError("The entered phrases are not valid. Please try again.");
+        }
+      } else {
+        setError("The entered phrases do not match the generated phrases.");
+      }
     }
-    return array;
+  }, [enteredPhrases, phrases, router]);
+
+  // Handle changes in input fields
+  const handleInputChange = (index, value) => {
+    const updatedPhrases = [...enteredPhrases];
+    updatedPhrases[index] = value;
+    setEnteredPhrases(updatedPhrases);
   };
 
   return (
-    <WalletLayout allPhrasesFilled={allSelected}>
+    <WalletLayout allPhrasesFilled={isVerified}>
       <div className="holder">
         <div className="description">
           <h3 className="h1">Verify Secret Phrases</h3>
-          <p className="p1">
-            Confirm that you have saved the phrase by selecting the correct
-            options.
-          </p>
+          <p className="p1">Enter the correct phrases in the first 3 rows.</p>
+          {error && <div className="error">{error}</div>}
         </div>
-        <div className="container">
-          {phrases.map((phrase, index) => (
-            <div key={index} className="phrase">
-              <p className="what">
-                What is the <span className="sp">{phrase.question}</span> phrase?
-              </p>
-              <div className="btns">
-                {phrase.options.map((option, idx) => (
-                  <button
-                    key={idx}
-                    className="btn"
-                    style={{
-                      backgroundColor: selectedOptions[index] === idx ? 'white' : '',
-                    }}
-                    onClick={() => handleClick(index, idx)}
-                  >
-                    {option}
-                  </button>
-                ))}
-              </div>
+        <div className="grid-container">
+          {Array.from({ length: 9 }).map((_, index) => (
+            <div key={index} className="phrase-item">
+              <input
+                type="text"
+                className="input-phrase"
+                value={enteredPhrases[index]}
+                onChange={(e) => handleInputChange(index, e.target.value)}
+              />
             </div>
           ))}
         </div>
