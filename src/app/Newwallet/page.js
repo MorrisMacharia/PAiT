@@ -6,7 +6,10 @@ import "../Newwallet/page.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
-import { generateMnemonicPhrase, validateMnemonicPhrase } from "../utils/utils.jsx";
+import {
+  generateMnemonicPhrase,
+  validateMnemonicPhrase,
+} from "../utils/utils.jsx";
 
 const Newwallet = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -28,9 +31,22 @@ const Newwallet = () => {
   const handleFinish = () => {
     if (isFinishEnabled) {
       const searchParams = new URLSearchParams({
-        phrases: JSON.stringify(generatedPhrases.slice(0, 3)),
+        phrases: JSON.stringify(generatedPhrases),
       });
-      router.push(`/Verify?${searchParams.toString()}`);
+      router.push(`/VerifyPhrases?${searchParams.toString()}`);
+    }
+  };
+
+  const handleCopy = () => {
+    if (generatedPhrases.length > 0) {
+      const phrasesText = generatedPhrases.join(" ");
+      navigator.clipboard.writeText(phrasesText)
+        .then(() => {
+          toast.success("Phrases copied to clipboard!");
+        })
+        .catch(() => {
+          toast.error("Failed to copy phrases");
+        });
     }
   };
 
@@ -92,6 +108,29 @@ const Newwallet = () => {
             </div>
           )}
         </div>
+        {!isLoading && (
+          <button
+            onClick={handleCopy}
+            style={{
+              color: "aqua",
+              backgroundColor: "transparent",
+              border: "none",
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              cursor: "pointer",
+              gap: "5px",
+            }}
+          >
+            <Image
+              src="/clipboard-copy.png"
+              width="11"
+              height="13"
+              alt="copy"
+            />
+            Tap to copy
+          </button>
+        )}
       </div>
       <ToastContainer
         position="top-center"

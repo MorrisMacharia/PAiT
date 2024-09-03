@@ -1,0 +1,50 @@
+.phrases-grid {
+  width: 400px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem; /* Adjust the gap as needed */
+  }
+  .phrase-item {
+width: 100%;
+border: none;
+border-radius: 15px;
+  }
+  .phrase-input{
+    text-align: center;
+    color: aliceblue;
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(28, 37, 65);
+  }
+  .verfy-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .verify-title{
+    color: aliceblue;
+  }
+  .verify-description{
+    color: aliceblue;
+  }
+  .finish-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .finish-button.disabled {
+    background-color: grey;
+    color: white;
+    cursor: not-allowed;
+  }
+  
+  .finish-button.enabled {
+    background-color: green;
+    color: white;
+    cursor: pointer;
+  }

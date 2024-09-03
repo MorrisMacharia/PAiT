@@ -21,9 +21,9 @@ export const WalletFooter = ({ allPhrasesFilled, onFinish }) => {
       <div className="actions2">
         <button 
           className="saved2"
-          style={{ backgroundColor: allPhrasesFilled ? 'aqua' : 'gray' }} // Change color based on state
-          onClick={onFinish} // Call onFinish when button is clicked
-          disabled={!allPhrasesFilled} // Disable button if phrases aren't filled
+          style={{ backgroundColor: allPhrasesFilled ? 'aqua' : 'gray' }} 
+          onClick={onFinish} 
+          disabled={!allPhrasesFilled} 
         >
           Finish
         </button>
