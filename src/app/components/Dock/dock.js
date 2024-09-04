@@ -1,49 +1,34 @@
-"use client"
+"use client";
 
-import React, { use } from "react";
+import React from "react";
 import "../Dock/dock.css";
 import Image from "next/image";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 
 const BottomNavbar = () => {
-   const router=useRouter();
+  const router = useRouter();
 
-   const handleonClick=()=>{
-    router.push('/Home');
-   }
-  
+  const handleonClick = () => {
+    router.push("/Home");
+  };
+
+  const navItems = [
+    { src: "/white-logomark 1.png", label: "Home", onClick: handleonClick },
+    { src: "/copy.png", label: "Copy" },
+    { src: "/trade.png", label: "Trade" },
+    { src: "/coins.png", label: "Meme" },
+  ];
+
   return (
     <div className="dock">
-      <div className="btn11">
-          <button className="dock1" onClick={handleonClick} >
-            <Image
-              src="/white-logomark 1.png"
-              alt="home"
-              width={24}
-              height={16.865}
-            />
-            <div className="hm">Home</div>
+      {navItems.map((item, index) => (
+        <div key={index} className="btn11">
+          <button className={index === 0 ? "dock1" : "dock2"} onClick={item.onClick}>
+            <Image src={item.src} alt={item.label} width={24} height={17} />
+            <div className="hm">{item.label}</div>
           </button>
-      </div>
-
-      <div className="btn11">
-        <button className="dock2">
-          <Image src="/copy.png" alt="home" width={24} height={16.865} />
-          <div className="hm">Copy</div>
-        </button>
-      </div>
-      <div className="btn11">
-        <button className="dock2">
-          <Image src="/trade.png" alt="home" width={24} height={16.865} />
-          <div className="hm">Trade</div>
-        </button>
-      </div>
-      <div className="btn11">
-        <button className="dock2">
-          <Image src="/coins.png" alt="home" width={24} height={16.865} />
-          <div className="hm">Meme</div>
-        </button>
-      </div>
+        </div>
+      ))}
     </div>
   );
 };

@@ -1,96 +1,73 @@
 .dock {
   display: flex;
-  width: 393px;
-  padding: var(--sds-size-space-600) var(--sds-size-space-300)
-    var(--sds-size-space-800) var(--sds-size-space-300);
   justify-content: space-around;
   align-items: flex-start;
-  gap: var(--sds-size-space-400);
+  gap: 16px;
+  width: 100%;
+  padding: 20px 0;
 }
-.dock1 {
+
+.dock1, .dock2 {
   display: flex;
   flex-direction: column;
-  display: flex;
-  width: 64px;
-  height: 64px;
-  padding-top: var(--sds-size-space-050);
   justify-content: center;
   align-items: center;
-  gap: var(--sds-size-space-0);
-  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
   border-radius: 18px;
   border: none;
+  background-color: #253052;
+}
+
+.dock1 {
   background-color: #45a5a3;
 }
-.dock2 {
-  display: flex;
-  flex-direction: column;
-  display: flex;
-  width: 64px;
-  height: 64px;
-  padding-top: var(--sds-size-space-050);
-  justify-content: center;
-  align-items: center;
-  gap: var(--sds-size-space-0);
-  flex-shrink: 0;
-  border: none;
-  border-radius: 18px;
-  background: #253052;
-}
+
 .hm {
   color: #fff;
-
-  font-size: var(--Label-Small-Size, 11px);
-  font-style: normal;
+  font-size: 11px;
   font-weight: 500;
-  line-height: var(--Label-Small-Line-Height, 16px); /* 145.455% */
+  line-height: 16px;
 }
+
 .btn11 {
   display: flex;
-  width: 64px;
-  height: 64px;
-  padding-top: var(--sds-size-space-050);
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: var(--sds-size-space-0);
-  flex-shrink: 0;
 }
-@media (max-width: 768px) {
-  .hm {
-    font-size: 12px;
-  }
 
+@media (max-width: 768px) {
   .dock {
-    padding: 8px 0;
+    padding: 10px 0;
   }
 
   .dock1, .dock2 {
-    padding: 8px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .hm {
+    font-size: 12px;
   }
 }
 
 @media (max-width: 480px) {
   .dock {
-    display: flex;
-   
-    padding: 5px 0;
+    padding: 8px 0;
+    gap: 8px;
   }
 
-  .btn11 {
-    margin-bottom: 10px;
+  .dock1, .dock2 {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
   }
 
   .hm {
     font-size: 10px;
   }
 
-  .dock1, .dock2 {
-    padding: 5px;
-  }
-
   .dock img {
     width: 20px;
-    height: auto;
   }
 }
