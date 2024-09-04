@@ -10,7 +10,6 @@ export default function WalletLayout({ children, allPhrasesFilled, onFinish }) {
   );
 
   useEffect(() => {
-    // Only run this effect if window is available
     if (typeof window !== "undefined") {
       const handleResize = () => setWindowWidth(window.innerWidth);
       window.addEventListener("resize", handleResize);
@@ -21,9 +20,7 @@ export default function WalletLayout({ children, allPhrasesFilled, onFinish }) {
     }
   }, []);
 
-  // Define responsive styles
   const layoutStyle = {
-    // width: "100%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-around",
@@ -46,7 +43,7 @@ export default function WalletLayout({ children, allPhrasesFilled, onFinish }) {
   };
 
   const footerStyle = {
-    width: "100%",
+    // width: "100%",
     padding: windowWidth > 1200 ? "1rem" : windowWidth > 768 ? "0.8rem" : "0.3rem",
   };
 

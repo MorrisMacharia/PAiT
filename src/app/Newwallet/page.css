@@ -1,16 +1,20 @@
-
-.creation2{
+/* Base styles (mobile-first) */
+.creation2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
+  gap: 20px;
   width: 100%;
+  height: auto;
+  padding: 20px;
+  box-sizing: border-box;
 }
+
 .description2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
+  gap: 30px;
   width: 100%;
   height: 100%;
 }
@@ -18,36 +22,38 @@
 .wall2 {
   color: #fff;
   text-align: center;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 500;
+  margin-bottom: 20px;
 }
 
 .tips, .copy, .actions2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
   width: 100%;
 }
 
 .tip1 {
   display: flex;
-  align-items: center;
-  gap: 15px;
+  align-items: flex-start;
+  gap: 10px;
   width: 100%;
 }
 
 .secrets {
   color: #f2f2fb;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 1.4;
   flex: 1;
 }
 
 .phrases {
   display: flex;
-  height: 148px;
+  height: auto;
+  min-height: 148px;
   justify-content: center;
   text-align: center;
   align-items: center;
@@ -62,6 +68,8 @@
     linear-gradient(180deg, #fbfdff 0%, #c7d1db 100%);
   box-shadow: 0px 6px 10px 4px rgba(0, 0, 0, 0.15),
     0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .creating, .saved {
@@ -74,6 +82,10 @@
   height: 40px;
   border-radius: 20px;
   background: #0b132b;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .loader-circle {
@@ -86,44 +98,35 @@
 }
 
 @keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
-/* Grid container for the secret phrases */
+
 .secret-phrases-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  grid-template-rows: repeat(4, auto);  /* 4 rows */
-  gap: 5px; /* Space between items */
-  width: 100%; /* Make sure it fits inside the container */
-  padding: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  /* gap: 10px; */
+  width: 100%;
+  /* padding: 10px; */
   box-sizing: border-box;
   text-align: center;
   justify-content: center;
   align-items: center;
 }
-
-/* Each phrase item inside the grid */
 .phrase-item {
-  padding: 7px;
-  /* background-color: #f0f0f0; Light background for each phrase */
+  padding: 10px;
   border-radius: 8px;
-  font-size: 8px;
+  font-size: 12px;
   font-weight: bold;
-  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  */
+  background-color: rgba(255, 255, 255, 0.1);
   transition: background-color 0.3s ease;
 }
 
-/* Hover effect for phrase items */
 .phrase-item:hover {
-  background-color: #e0e0e0; /* Slightly darker on hover */
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Loader circle (can be customized) */
 .loader-circle.black {
   border: 5px solid #f3f3f3;
   border-top: 5px solid #000;
@@ -131,21 +134,66 @@
   width: 30px;
   height: 30px;
   animation: spin 1s linear infinite;
-  margin: 0 auto; /* Center the loader */
+  margin: 0 auto;
 }
-
-
-
-
-
 
 .phrases p {
   font-size: 14px;
   margin-top: 10px;
 }
 
+/* Media Queries for larger screens */
+@media screen and (min-width: 480px) {
+  .secret-phrases-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+  
+  .phrase-item {
+    font-size: 14px;
+  }
+}
 
-.wall2 {
-  text-align: center;
-  margin-bottom: 20px;
+@media screen and (min-width: 768px) {
+  .creation2 {
+    gap: 30px;
+    padding: 30px;
+  }
+  
+  .wall2 {
+    font-size: 24px;
+  }
+  
+  .tips, .copy, .actions2 {
+    gap: 30px;
+  }
+  
+  .secrets {
+    font-size: 16px;
+  }
+  
+  .secret-phrases-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .phrase-item {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .creation2 {
+    gap: 40px;
+    padding: 40px;
+  }
+  
+  .wall2 {
+    font-size: 28px;
+  }
+  
+  .secret-phrases-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
 }

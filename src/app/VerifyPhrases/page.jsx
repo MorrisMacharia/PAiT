@@ -46,13 +46,12 @@ const VerifyPhrases = () => {
           setIsVerified(true);
           toast.success("Phrases verified successfully!");
         } else {
-          toast.error("The entered phrases are not valid. Please try again.");
+          // toast.error("The entered phrases are not valid. Please try again.");
         }
       } else {
-        toast.error("The entered phrases do not match the generated phrases.");
       }
     } else {
-      setIsVerified(false); // Reset verification if not all phrases are entered
+      setIsVerified(false);
     }
   }, [enteredPhrases, originalPhrases]);
 
@@ -62,11 +61,19 @@ const VerifyPhrases = () => {
     setEnteredPhrases(updatedPhrases);
   };
 
+  const handleFinish = () => {
+    if (isVerified) {
+      // Encode the verified phrases and pass them to the next page
+      const encodedPhrases = encodeURIComponent(JSON.stringify(enteredPhrases));
+      router.push(`/Verify?phrases=${encodedPhrases}`);
+    }
+  };
+
   return (
     <WalletLayout
       hideFooter={false}
       allPhrasesFilled={isVerified}
-      onFinish={() => router.push("/Verify")}
+      onFinish={handleFinish}
     >
       <div className="verify-container">
         <h1 className="verify-title">Verify Secret Phrases</h1>

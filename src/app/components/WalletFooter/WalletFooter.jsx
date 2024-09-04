@@ -21,7 +21,7 @@ export const WalletFooter = ({ allPhrasesFilled, onFinish }) => {
       <div className="actions2">
         <button 
           className="saved2"
-          style={{ backgroundColor: allPhrasesFilled ? 'aqua' : 'gray' }} 
+          style={{ backgroundColor: allPhrasesFilled ? 'aqua' : 'gray', width: '100%', }  } 
           onClick={onFinish} 
           disabled={!allPhrasesFilled} 
         >
