@@ -26,13 +26,8 @@
   gap: 50px;
   width: 100%;
   height: 100%;
-  /* padding-bottom: 50px; */
 }
-.what {
-  color: white;
-  font-weight: 700;
-  font-size: 14px;
-}
+
 .sp {
   color: aqua;
 }
@@ -72,11 +67,10 @@
 .grid-container {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-  grid-template-rows: repeat(3, 1fr); /* 3 equal rows */
+  grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: repeat(3, 1fr); 
   gap: 10px;
-  /* margin-bottom: 20px; */
-  width: inherit; /* Ensure grid takes full width */
+  width: inherit; 
   box-sizing: border-box;
 }
 
@@ -85,28 +79,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: transparent;
 }
-
+.phrase-item:hover{
+  background-color: transparent;
+}
 .input-phrase {
   width: 100%;
   padding: 10px;
-  border: none; /* Remove default border */
+  border: none;
   border-radius: 12px;
-  /* box-sizing: border-box; */
   text-align: center;
-  font-size: 10px; /* Adjust font size as needed */
-  background-color: rgb(28, 37, 65); /* Default background color */
-  color: var(--Text-Muted, #8a94b0); /* Default text color */
+  font-size: 10px; 
+  background-color: rgb(28, 37, 65);
+  color: var(--Text-Muted, #8a94b0);
 }
 
 .input-phrase:focus {
-  /* No changes on focus */
-  background-color: rgb(28, 37, 65); /* Ensure background stays the same on focus */
-  color: var(--Text-Muted, #8a94b0); /* Ensure text color stays the same on focus */
+  background-color: rgb(28, 37, 65); 
+  color: var(--Text-Muted, #8a94b0); 
 }
 
-.input-phrase:valid:hover,
-.input-phrase:not(:placeholder-shown):hover {
-  background-color: white; /* Background color on hover after phrase is entered */
-  color: black; /* Text color on hover after phrase is entered */
-}
+

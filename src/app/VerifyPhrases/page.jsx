@@ -46,7 +46,7 @@ const VerifyPhrases = () => {
           setIsVerified(true);
           toast.success("Phrases verified successfully!");
         } else {
-          // toast.error("The entered phrases are not valid. Please try again.");
+          toast.error("The entered phrases are not valid. Please try again.");
         }
       } else {
       }
@@ -63,7 +63,6 @@ const VerifyPhrases = () => {
 
   const handleFinish = () => {
     if (isVerified) {
-      // Encode the verified phrases and pass them to the next page
       const encodedPhrases = encodeURIComponent(JSON.stringify(enteredPhrases));
       router.push(`/Verify?phrases=${encodedPhrases}`);
     }

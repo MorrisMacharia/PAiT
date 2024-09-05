@@ -43,7 +43,6 @@ export default function WalletLayout({ children, allPhrasesFilled, onFinish }) {
   };
 
   const footerStyle = {
-    // width: "100%",
     padding: windowWidth > 1200 ? "1rem" : windowWidth > 768 ? "0.8rem" : "0.3rem",
   };
 

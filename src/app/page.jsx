@@ -51,7 +51,7 @@ export default function Home() {
         {showBal ? (
           <HomeBalance />
         ) : (
-          <div  className="home-link">
+          <div className="home-link">
             <Image src="/Clip.png" alt="home" width={122} height={34} />
           </div>
         )}

@@ -23,14 +23,13 @@ export default function HomeLayout({ children }) {
       style={{
         display: "flex",
         flexDirection: "column",
+        justifyContent: "center",
         minHeight: "100vh",
         padding: isMobile ? "10px" : "20px",
         position: "relative",
       }}
     >
-      <div style={{ flex: 1 }}>
         {children}
-      </div>
 
       <footer>
         <BottomNavbar isMobile={isMobile} />
