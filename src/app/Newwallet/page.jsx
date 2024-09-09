@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import WalletLayout from "../Layout/WalletLayout";
+import WalletLayout from "../Layout/WalletLayout.jsx";
 import "../Newwallet/page.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -133,7 +133,7 @@ const Newwallet = () => {
         )}
       </div>
       <ToastContainer
-        position="top-center"
+        position= "top-center"
         autoClose={3000}
         hideProgressBar={false}
         closeOnClick
